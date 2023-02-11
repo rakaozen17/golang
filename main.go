@@ -1,8 +1,6 @@
 package main
 
-import (
-	"./cmd"
-)
+import "restproject/cmd"
 
 func main() {
 	cmd.Execute()

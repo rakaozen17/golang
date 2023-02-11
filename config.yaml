@@ -1,7 +1,7 @@
 
 app:
   name: test golang app
-  port: 8080
+  port: 3786  
   debug: true
 
 # Database settings

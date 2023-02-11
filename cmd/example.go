@@ -7,7 +7,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
-func exampleCommand(application *app.App) *cobra.Command {
+func ExampleCommand(application *app.App) *cobra.Command {
 	return &cobra.Command{
 		Use:   "print [text to print]",
 		Short: "Prints text to the console",

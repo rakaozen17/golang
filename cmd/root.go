@@ -15,7 +15,8 @@ func Execute() error {
 	var root = &cobra.Command{}
 	application := app.InitApp()
 	root.AddCommand(
-		exampleCommand(application),
+		ExampleCommand(application),
+		RestCommand(application),
 	)
 
 	return root.Execute()

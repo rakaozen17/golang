@@ -1,14 +1,13 @@
 
 app:
   name: test golang app
-  port: 3786  
+  port: 8080  
   debug: true
 
-# Database settings
 database:
   driver: sqlserver
   host: localhost
   port: 1433
   username: sa
-  password: secret
-  database: my_database
+  password: d4010470d2284913
+  database: SQL_TRAVELAPP

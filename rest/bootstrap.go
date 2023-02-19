@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"os"
 	"os/signal"
+	users "restproject/api/impl/users"
 	"restproject/app"
 	"syscall"
 	"time"
@@ -32,9 +33,8 @@ func Serve(application *app.App) {
 		middleware.RequestID(),
 	)
 
-	e.GET("/testing", func(c echo.Context) error {
-		return c.String(http.StatusOK, "Hello, World!")
-	})
+	//REGISTER ROUTER HERE
+	users.RegisterRoute(application, e)
 
 	go func() {
 		port := viper.GetString("app.port")

@@ -49,6 +49,4 @@ func (app *App) CloseApp() {
 	if app.dbr != nil {
 		app.dbr.Close()
 	}
-
-	logrus.Info("Ending worker...")
 }

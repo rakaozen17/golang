@@ -11,3 +11,5 @@ database:
   username: sa
   password: d4010470d2284913
   database: SQL_TRAVELAPP
+
+jwt_secretkey: wSiKrlWJ0RvsNTjIP1hmsdLIUtY3zeC93F8sfLRw403vUL7u9UsN8KHgEnkynvXj

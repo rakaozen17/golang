@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"os"
 	"os/signal"
+	destination "restproject/api/impl/destination"
 	users "restproject/api/impl/users"
 	"restproject/app"
 	"syscall"
@@ -33,8 +34,13 @@ func Serve(application *app.App) {
 		middleware.RequestID(),
 	)
 
+	//init database yang akan digunakan disini
+	SQLTRAVEL_DBR := application.DbRead()
+	SQLTRAVEL_DBW := application.DbWrite()
+
 	//REGISTER ROUTER HERE
-	users.RegisterRoute(application, e)
+	users.RegisterRoute(application, e, SQLTRAVEL_DBR, SQLTRAVEL_DBW)
+	destination.RegisterRoute(application, e, SQLTRAVEL_DBR, SQLTRAVEL_DBW)
 
 	go func() {
 		port := viper.GetString("app.port")
